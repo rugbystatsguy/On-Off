@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>NR Fellows Status Tracker</title>
+<title>Fellows Status Tracker</title>
 
 <style>
 body {
@@ -56,13 +56,13 @@ h2 {
     margin-top: 15px;
     max-height: 250px;
     overflow-y: auto;
-    font-size: 13px; /* Smaller text to fit date + time */
+    font-size: 13px;
 }
 
 .entry {
     padding: 5px 0;
     border-bottom: 1px solid #eee;
-    white-space: nowrap; /* Keeps everything on one line */
+    white-space: nowrap;
 }
 
 /* Bottom row buttons */
@@ -106,13 +106,13 @@ h2 {
 <body>
 
 <div class="container">
-    <h2>NR Fellows Status</h2>
+    <h2>Fellows Status</h2>
 
     <div class="status-buttons">
-        <button class="on-station" onclick="recordStatus('NR Fellows on station')">ON STATION</button>
-        <button class="off-station" onclick="recordStatus('NR Fellows off station')">OFF STATION</button>
-        <button class="on-duty" onclick="recordStatus('NR Fellows on station and on duty')">ON DUTY</button>
-        <button class="off-duty" onclick="recordStatus('NR Fellows off station and off duty')">OFF DUTY</button>
+        <button class="on-station" onclick="recordStatus('Fellows on station')">ON STATION</button>
+        <button class="off-station" onclick="recordStatus('Fellows off station')">OFF STATION</button>
+        <button class="on-duty" onclick="recordStatus('Fellows on station and on duty')">ON DUTY</button>
+        <button class="off-duty" onclick="recordStatus('Fellows off station and off duty')">OFF DUTY</button>
     </div>
 
     <div class="summary" id="summaryBox"></div>
@@ -146,8 +146,8 @@ function recordStatus(message) {
     const time = getCurrentTime();
     const date = getCurrentDate();
 
-    const displayEntry = `${date} ${time} - ${message}`; // For summary
-    const shareEntry = `${time} - ${message}`; // For WhatsApp only
+    const displayEntry = `${date} ${time} - ${message}`;
+    const shareEntry = `${time} - ${message}`;
 
     entries.push({ display: displayEntry, share: shareEntry });
     localStorage.setItem("nrFellowsEntries", JSON.stringify(entries));
